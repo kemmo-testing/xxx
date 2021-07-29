@@ -3,6 +3,7 @@ var mysql = require('mysql');
 const https = require('https')
 const HtmlFilter = require('html-filter');
 var execPhp = require('exec-php');
+var vhost = require('vhost');
 const htmlFilter = new HtmlFilter();
 var request = require('request');
 //const extract = require('extract-zip')
@@ -95,6 +96,11 @@ class login{
 
 }
 
+app.use(vhost('mail.example.com', function (req, res) {
+  // handle req + res belonging to mail.example.com
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('hello from mail!')
+}))
 
 app.use(
   express.urlencoded({
@@ -107,7 +113,7 @@ app.use(express.static(__dirname + '/public'));
 let xx = new login;
 
 
-app.get('/loginxx', (req, res) => {
+app.get('/loginx', (req, res) => {
 
     con.query("SELECT * FROM users WHERE username = '"+req.query.user+"' AND password = '"+req.query.pwd+"'", function(err, result, field){
         if(result.length === 0){
