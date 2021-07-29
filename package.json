@@ -1,0 +1,29 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "curlrequest": "^1.0.1",
+    "download-git-repo": "^3.0.2",
+    "exec-php": "0.0.5",
+    "express": "^4.17.1",
+    "extract-zip": "^2.0.1",
+    "fs-extra": "^10.0.0",
+    "git-clone-repo": "^1.0.0",
+    "git-pull-or-clone": "^2.0.1",
+    "github-download": "^0.5.0",
+    "html-filter": "^4.3.0",
+    "jsdom": "^16.6.0",
+    "mysql": "^2.18.1",
+    "random-useragent": "^0.5.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "vhost": "^3.0.2"
+  }
+}
