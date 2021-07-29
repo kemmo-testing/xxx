@@ -107,7 +107,7 @@ app.use(express.static(__dirname + '/public'));
 let xx = new login;
 
 
-app.get('/login', (req, res) => {
+app.get('/loginxx', (req, res) => {
 
     con.query("SELECT * FROM users WHERE username = '"+req.query.user+"' AND password = '"+req.query.pwd+"'", function(err, result, field){
         if(result.length === 0){
@@ -120,7 +120,7 @@ app.get('/login', (req, res) => {
 })
 
 //    let ch = x.check(req.query.user) 
-app.get('/reg', (req, res) => {
+app.get('/regxx', (req, res) => {
     con.query("SELECT username FROM users WHERE username = '"+ req.query.user +"'", function(err, result, field){
         if(result.length === 0){
             xx.create(req.query.user,req.query.pwd)
@@ -132,7 +132,7 @@ app.get('/reg', (req, res) => {
     })
 })
 
-app.get('/setsite', (req, res) => {
+app.get('/setsitexx', (req, res) => {
     let url = req.query.url
     let user = req.query.user
     let pwd = req.query.pwd
